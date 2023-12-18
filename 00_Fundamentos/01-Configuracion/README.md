@@ -11,3 +11,7 @@
 - linea 58 outDir: indica dónde se generan los archivos js transcritos.
 - linea 59 removeComments: eliminar comentarios del ts en el archivo js.
 - linea 71 noEmitOnError: Si el código fuente de ts tiene algún error, este parámetro indicará si se transcribe o no a js.
+
+## Comando tsc
+
+- el comando tsc sin nada mas hara las conversiones necesarias, con la configuracion asignada
