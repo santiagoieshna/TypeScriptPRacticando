@@ -11,6 +11,6 @@ const elem1 = elemento as number
 
 // CASO REAL 
 let inputUser = document.getElementById('username') as HTMLInputElement
-// inputUser.value
+inputUser.value
 
 
