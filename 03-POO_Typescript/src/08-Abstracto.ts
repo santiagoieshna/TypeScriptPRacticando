@@ -1,5 +1,7 @@
 // Cambiamos nombres a los objetos, porque dan error con los archivos anteriores
-class DatosBasicos01{
+
+// esta clase no va a ser usada
+abstract class DatosBasicos02{
 
     constructor
     (
@@ -17,12 +19,13 @@ class DatosBasicos01{
     get fullDesc(){
         return this.name+' '+ this.desc
     }
-
- 
+    
+    abstract guardar():void
 }
 
 // OVERRIDE
-class Producto01 extends DatosBasicos01{
+class Producto02 extends DatosBasicos02{
+    
     constructor
     (
         public stock: number,
@@ -39,9 +42,12 @@ class Producto01 extends DatosBasicos01{
     override get fullDesc(){
         return 'Producto: '+super.fullDesc
     }
+    override guardar(): void {
+        console.log("Guardando Producto");
+    }
 }
 
-class Categoria01 extends DatosBasicos01{
+class Categoria02 extends DatosBasicos02{
     public productos: Array<Producto01>
     constructor
     (
@@ -54,7 +60,7 @@ class Categoria01 extends DatosBasicos01{
         this.productos= []
     }
 
-    agregarProducto( producto: Producto01)
+    agregarProducto( producto: Producto02)
     {
         this.productos.push(producto)
     }
@@ -62,9 +68,12 @@ class Categoria01 extends DatosBasicos01{
     {
         return 'Categoria: '+super.fullDesc
     }
+    override guardar(): void {
+        console.log("Guardando Categoria");
+    }
 }
 
-let producto02= new Producto01 ( 
+let producto03= new Producto02 ( 
     100,
     1,
     'iPhone',
@@ -73,15 +82,11 @@ let producto02= new Producto01 (
     1
 )
 
-let categoria02 = new Categoria01(
+let categoria03 = new Categoria02(
     'Celulares',
     '',
     new Date(),
     1
 )
 
-categoria02.agregarProducto(producto02)
-
-console.log(producto02, categoria02)
-
-console.log(producto02.fullDesc);
+//let datos = new DatosBasicos02('dato1', 'desc', new Date(), 1)
