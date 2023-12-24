@@ -1,0 +1,26 @@
+
+interface KeyValue<T,V>{
+    key: T,
+    value: V
+}
+
+interface Product{
+    id: string
+}
+
+function fetchProduct(): KeyValue<string, Product>
+{
+    return{
+        key: 'idProucto',
+        value: {id: 'id de product'}
+    }
+}
+
+function fetchStock(): KeyValue<string, number>
+{
+    return{
+        key: 'idProucto',
+        value: 50
+    }
+}
+
